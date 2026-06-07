@@ -87,7 +87,7 @@ function App() {
             Add Value{" "}
           </button>
           <button onClick={decValue} style={{ padding: "5px", margin: "10px" }}>
-            Remove Value
+            Reduce Value
           </button>
         </div>
         <p>footer: {counter}</p>
