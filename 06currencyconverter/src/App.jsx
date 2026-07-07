@@ -17,13 +17,13 @@ function App() {
   };
 
   const swap = () => {
-    // const temp = to
-    setFrom(to);
-    setTo(from);
-    // const temp2 = amount;
-    setConvertedAmount(amount);
-    setAmount(convertedAmount);
-  };
+  setFrom(to);
+  setTo(from);
+
+  const temp = amount;
+  setAmount(convertedAmount);
+  setConvertedAmount(temp);
+};
 
   return (
     <div
