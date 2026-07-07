@@ -1,11 +1,12 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import "./index.css";
-import App from "./App.jsx";
+// import App from "./App.jsx";
 import Layout from "./Layout.jsx";
 import About from "./components/About/About.jsx";
 import Company from "./components/About/Company.jsx";
 import Home from "./components/Home/Home.jsx";
+import Contact from "./components/Contact/Contact.jsx";
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -28,6 +29,7 @@ const router = createBrowserRouter(
       </Route>
       {/* This is a nested route. Since it is inside the parent route "/", its full URL becomes "/about". */}
       {/* Use opening/closing tags when the route contains nested routes: */}
+      <Route path="contact" element={<Contact />}/>
     </Route>,
   ),
 );
