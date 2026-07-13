@@ -1,19 +1,26 @@
-import { useContext, useState } from "react";
-import ThemeContext from "../../context/ThemeContext";
+// import { useContext, useState } from "react";
+
+import useTheme from "../../context/ThemeContext.js";
 
 export default function ThemeBtn() {
 
-    const {theme, setTheme} = useContext(ThemeContext)
+    const {themeMode, darkTheme, lightTheme} = useTheme()
 
     const toggleTheme = () => {
-        setTheme(theme === 'light'? 'dark' : 'light');
+        (themeMode === 'light'? darkTheme() : lightTheme());
+        // const darkModeStatus = e.currentTarget.checked
+        // if(darkModeStatus){
+        //     darkTheme()
+        // }else{
+        //     lightTheme()
+        // }
     }
 
     return (
         <label className="relative inline-flex items-center cursor-pointer">
             <input
                 type="checkbox"
-                checked={theme === "dark"}
+                checked={themeMode === "dark"}
                 className="sr-only peer"
                 onChange={toggleTheme}
             />
@@ -22,4 +29,3 @@ export default function ThemeBtn() {
         </label>
     );
 }
-
